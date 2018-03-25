@@ -1,26 +1,20 @@
 {
-  "name": "brick-editor",
+  "name": "interactive-doc",
   "version": "0.0.1",
-  "description": "An editor to help beginners transition from block-based languages.",
+  "description": "An interactive document",
   "main": "index.js",
   "scripts": {
-    "simpleserver": "node_modules/.bin/http-server -c-1 ./ -p 8888",
-    "makebundle": "node_modules/browserify/bin/cmd.js -r recast -r estraverse -o bundle.js",
-    "test": "node tests.js"
+    "simpleserver": "node_modules/.bin/http-server -c-1 ./ -p 8888"
   },
-  "author": "Microsoft Corporation",
+  "author": "Charlotte Cullip",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:oxy-compsci/brick-editor.git",
-    "web": "https://github.com/oxy-compsci/brick_editor"
+    "url": "git@github.com:ccullip/interactiveDoc.git",
+    "web": "https://github.com/ccullip/interactiveDoc"
   },
   "dependencies": {
-    "assert": "^1.4.1",
     "browserify": "16.1.0",
-    "estraverse": "^4.2.0",
-    "http-server": "0.11.1",
-    "monaco-editor": "0.10.1",
-    "recast": "^0.14.5"
+    "http-server": "0.11.1"
   }
 }
