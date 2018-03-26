@@ -3,13 +3,28 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <title>Tunneling Particles</title>
+    <script src="main.js"></script>
+    <link rel="icon" href="/img/proton.png"/>
+
 </head>
 <body>
-    <h1>Particle Tunneling</h1>
+    <h1>Tunneling Particles</h1>
     <div id="container">
-        <div id="animation" onload="myMove()">My animation will go here</div>
+        <div id="leftside">
+            <div id="wall"></div>
+            <div id="rightside"></div>
+            <div id="line"></div>
+            <div><img src="/img/proton.png" id="proton" /></div>
+        </div>
+        <div id="buttonContainer">
+            <button class="button" onclick="animationManager('start')">Start Animation</button>
+            <button class="button" onclick="animationManager('stop')">Stop Animation</button>
+            <button class="button" onclick="animationManager('reset')">Reset Animation</button>
+        </div>
     </div>
+
 
 </body>
 </html>

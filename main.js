@@ -1,25 +1,51 @@
 // JavaScript source code
-var id = setInterval(frame, 5);
+var goingRight = true;
 
-function frame() {
-    if (/* test for finished */) {
-        clearInterval(id);
+
+function animationManager(flag) {
+    var elem = document.getElementById("proton");
+
+    if (flag == "start") {
+        var pos = elem.offsetLeft;
+        var top = 185;
+        id = setInterval(frame, 10);
+        function frame() {
+            pos = elem.offsetLeft;
+            if (goingRight == true) {
+                if (pos == 375) {
+                    goingRight = false;
+                } else {
+                    elem.style.top = (top + (150 * Math.sin(pos / 10))) + 'px';
+                    pos++;
+                    elem.style.left = pos + 'px';
+                }
+            }
+            else {
+                if (pos == 0) {
+                    goingRight = true;
+                }
+                else {
+                    elem.style.top = (top + (150 * Math.sin(pos / 10))) + 'px';
+                    pos--;
+                    elem.style.left = pos + 'px';
+                }
+            }
+        }
+    } else if (flag == "stop") {
+        window.clearInterval(id);
     } else {
-        /* code to change the element style */
+        window.clearInterval(id);
+        elem.style.left = 0 + 'px';
+        elem.style.top = 185 + 'px';
+        goingRight = true;
     }
+    
 }
 
-function myMove() {
-    var elem = document.getElementById("animate");
-    var pos = 0;
-    var id = setInterval(frame, 5);
-    function frame() {
-        if (pos == 350) {
-            clearInterval(id);
-        } else {
-            pos++;
-            elem.style.top = pos + 'px';
-            elem.style.left = pos + 'px';
-        }
-    }
+function stopAnimation() {
+    clearInterval(id);
+    var elem = document.getElementById("proton");
+    // change position back to 0
+    elem.style.left = 0 + 'px';
+    elem.style.top = 185 + 'px';
 }
