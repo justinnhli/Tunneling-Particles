@@ -6,71 +6,176 @@
     <link rel="stylesheet" href="stylesheet.css" />
     <title>Tunneling Particles</title>
     <script src="main.js"></script>
-    <link rel="icon" href="/img/proton.png"/>
+    <link rel="icon" href="/img/proton.png" />
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"></script>
 
 </head>
-<body>
+<body onload="move()">
     <div id="background">
-        <h1 id="title">Tunneling Particles</h1>
-        <p>Intro to particles, should have experience with particles, waves, etc, know about protons/electrons</p>
-        <p><b>ANIMATION: MOVING PARTICLES</b></p>
-        <p>What about a particle confined to a box Potential energy is 0 inside the box and rises abruptly to infinity at the sides of the box, effectively confining the particle to inside the box. The wavefunction for this particle is defined as Psi = Ae^ikx + Be^-ikx. The A term describes the motion to the right of the wave and the B term describes the motion to the left of the wave.</p>
-        <p><b>ANIMATION: PARTICLE MOVING IN A BOX (switch particle, energy)</b></p>
+        <br />
+        <div id="titlecontainer">
+            <img src="/img/electron.png" class="electron" id="electron1" />
+            <h1 id="title">Tunneling Particles</h1>
+        </div>
+        <p>
+            Tunneling is an aspect of quantum mechanics that attempts to explain how particles can travel through potential energy barriers. Classical
+            physics tells us that if a particle, such as a proton or electron, were contained in a "box" with walls of potential energy higher than
+            the particle's kinetic energy, the particle would not be able to leave the box. In a 1-dimensional box with V = 0 inside the box and
+            V = &#8734; at each wall, the classical movement appears to be true.
+        </p>
+        <br />
         <div id="animationContainer2">
-            <canvas class="wall"></canvas>
-            <canvas class="leftside" id="leftside2"></canvas>
-            <canvas class="wall"></canvas>
+            <div class="wall" id="leftwall2"><p class="potentialbarriertext">V = &#8734;</p></div>
+            <div class="leftside" id="leftside2"><p class="potentialbarriertext">V = 0</p></div>
+            <div class="wall" id="rightwall2"><p class="potentialbarriertext">V = &#8734;</p></div>
             <div class="line" id="line2"></div>
             <img src="/img/proton.png" class="proton" id="proton2" />
             <div class="slidecontainer">
-                <p class="slidertext">Energy</p>
-                <input type="range" min="1" max="180" value="90" class="slider" id="energy2">
+                <p class="slidertext">Kinetic Energy</p>
+                <input type="range" min="1" max="180" value="90" class="energy" id="energy2">
+                <hgroup class="speech-bubble" style="margin-top:40px;margin-left:10px;">
+                    <h1 style="font-size:small;color:white;font-family:Arial;padding:5px;font-weight:400;">Try changing the kinetic energy of the particle!</h1>
+                </hgroup>
             </div>
         </div>
-        <div id="buttonContainer">
-            <button id="s" class="button" onclick="animationManager('start', 'proton2', 128, 'energy2'); draw()">Start Animation</button>
-            <button id="s" class="button" onclick="animationManager('stop', 'proton2', 128, 'energy2')">Stop Animation</button>
-            <button id="r" class="button" onclick="animationManager('reset', 'proton2', 128, 'energy2')">Reset Animation</button>
+        <div id="smallButtonContainer">
+            <button id="s" class="button" onclick="animationManager('start', 'proton2', 128, 'energy2')">Start</button>
+            <button id="s" class="button" onclick="animationManager('stop', 'proton2', 128, 'energy2')">Stop</button>
+            <button id="r" class="button" onclick="animationManager('reset', 'proton2', 128, 'energy2')">Reset</button>
         </div>
-        <p>But what if the potential energy is still higher that the kinetic energy but not infinity? Well... This leads to tunneling! Quantum theory states that particles are able to tunnel through the walls if V>E, with the kinetic energy decaying as it tunnels. Tunneling is not guaranteed, however. When a particle reaches a boundary with V>E but V != infinity, it can either continue through the wall or be reflected and change direction. This can be described by the tunneling probability: INSERT EQUATION.</p>
-        <p><b>ANIMATION: PARTICLE TUNNELING THROUGH WALLS</b></p>
+        <br />
+        <br />
+        <br />
+        <p>
+            But what if the potential energy is still higher that the kinetic energy but not infinity? Well...
+            This leads to tunneling! Quantum theory states that particles are able to tunnel through the walls if V>E,
+            with the kinetic energy decaying as it tunnels. Tunneling is not guaranteed, however. When a particle reaches
+            a boundary with E < V < &#8734;, it can either continue through the wall or be reflected and change direction.
+            This can be described by the tunneling probability: `P = e^((-4api)/hsqrt(2m(V-E)`.
+        </p>
+        <p>
+            The probability of tunneling will increase as mass, <i>m</i>, decreases, potential energy, <i>V</i>, decreases, and the
+            barrier width, <i>a</i>, decreases. In reality, the particle, which also has wave-like qualities, will mostly be reflected,
+            although a certain portion will continue through the barrier, depending on the probability from the above equation.
+            For the following example, we will simplify the equation to either be P = 1 (100% chance of tunneling) or P = 0 (0% chance of tunneling)
+            in order to show the motion of the particle in each situation.
+        </p>
+        <br />
+        <br />
         <div id="animationContainer2">
-            <canvas class="wall"></canvas>
-            <canvas class="leftside" id="leftside3"></canvas>
-            <canvas class="wall"></canvas>
+            <div class="wall"><p class="potentialbarriertext">V = &#8734;</p></div>
+            <div class="leftside" id="leftside3"><p class="potentialbarriertext">V = 0</p></div>
+            <div class="wall"><p class="potentialbarriertext">V > E</p></div>
             <div class="line" id="line2"></div>
             <img src="/img/proton.png" class="proton" id="proton3" />
-            <div class="slidecontainer">
-                <p class="slidertext">Energy</p>
-                <input type="range" min="1" max="180" value="90" class="slider" id="energy3">
+            <div class="slidecontainer" style="margin-top:5px;">
+                <p class="slidertext">Kinetic Energy</p>
+                <input type="range" min="1" max="180" value="90" class="energy" id="energy3">
+                <br />
+                <br />
+                <br />
+                <p class="slidertext">Tunneling</p>
+                <label class="switch">
+                    <input id="tunneling1" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <hgroup class="speech-bubble" style="margin-top:40px;margin-left:10px;">
+                    <h1 style="font-size:small;color:white;font-family:Arial;padding:5px;font-weight:400;">Try turning the tunneling on!</h1>
+                </hgroup>
             </div>
         </div>
-        <div id="buttonContainer">
-            <button id="s" class="button" onclick="animationManager('start', 'proton3', 100, 'energy3')">Start Animation</button>
-            <button id="s" class="button" onclick="animationManager('stop', 'proton3', 100, 'energy3')">Stop Animation</button>
-            <button id="r" class="button" onclick="animationManager('reset', 'proton3', 100, 'energy3')">Reset Animation</button>
+        <div id="smallButtonContainer">
+            <button id="s" class="button" onclick="animationManager('start', 'proton3', 100, 'energy3')">Start</button>
+            <button id="s" class="button" onclick="animationManager('stop', 'proton3', 100, 'energy3')">Stop</button>
+            <button id="r" class="button" onclick="animationManager('reset', 'proton3', 100, 'energy3')">Reset</button>
         </div>
-        <p>As the potential energy approaches the kinetic energy, the probability of tunneling increases based on the tunneling probability formula.</p>
-        <p>If the potential energy barrier isn't infinitely wide, then the proton can tunnel through the barrier and continue moving on the other side.</p>
-        <p><b>ANIMATION: DECREASE BARRIER WIDTH, PARTICLE TUNNELS THROUGH WALL, CONTINUES ON</b></p>
-        <p>If the potential energy barrier is lower than the kinetic energy of the particle, the particle will just travel over the barrier without a problem.</p>
-        <p><b>ANIMATION: LOWER BARRIER SIZE, PARTICLE TRAVELS OVER BARRIER</b></p>
-        <p>Now what happens if we use a proton instead of an electron? As mass increaes, the likelihood of tunneling decreases--probably the reason why you've never seen a human travel through a wall! (is this true?)</p>
-        <p><b>ANIMATION: CHANGE SIZE OF PARTICLE</b></p>
-        <p>Electron tunneling appears in many areas of science such as LIST AREAS, and has some incredibly important implications such as FIX ME. By futhering our understanding of quantum theory we discover more and more about the rules that define our world at a nanoscopic level. I've compiled all of the various aspects of particle tunneling into one simulation--feel free to play around and see what you can discover!</p>
-        <p><b>ANIMATION: SIZE, V, E, WIDTH, </b></p>
+        <br />
+        <br />
+        <br />
+        <p>
+            If the potential energy barrier isn't infinitely wide, then the proton can tunnel through the barrier and resume oscillation on the other side.
+            The width of the barrier will affect how much kinetic energy the particle has afterwards.
+        </p>
+        <br />
+        <br />
         <div id="animationContainer">
-            <canvas class="wall"></canvas>
-            <canvas class="leftside"></canvas>
-            <canvas class="wall"></canvas>
-            <canvas class="rightside"></canvas>
+            <div class="wall"><p class="potentialbarriertext">V = &#8734;</p></div>
+            <div class="leftside" id="leftside2"><p class="potentialbarriertext">V = 0</p></div>
+            <div class="wall" id="rightwall"><p class="potentialbarriertext">V > E</p></div>
+            <div class="rightside" id="rightside2"><p class="potentialbarriertext">V = 0</p></div>
             <div class="line" id="line8"></div>
-            <img src="/img/proton.png" class="proton" id="proton8" />
+            <img src="/img/proton.png" class="proton" id="proton4" />
+            <div class="slidecontainer" style="margin-top:0px;padding-top:0px;">
+                <p class="slidertext">Kinetic Energy</p>
+                <input type="range" min="1" max="180" value="90" class="energy" id="energy4">
+                <br />
+                <br />
+                <p class="slidertext">Tunneling</p>
+                <label class="switch">
+                    <input id="tunneling2" type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+                <p class="slidertext">Potential Energy Barrier</p>
+                <input type="range" min="100" max="300" value="100" class="potential" id="barrier1" onchange="changeBarrier('barrier1', 'rightwall', 'rightside2')">
+                <br />
+                <hgroup class="speech-bubble" style="margin-top:40px;margin-left:10px;">
+                    <h1 style="font-size:small;color:white;font-family:Arial;padding:5px;font-weight:400;">Try adjusting the barrier width!</h1>
+                </hgroup>
+            </div>
         </div>
-        <div id="buttonContainer">
-            <button id="s" class="button" onclick="animationManager('start', 'proton8')">Start Animation</button>
-            <button id="s" class="button" onclick="animationManager('stop', 'proton8')">Stop Animation</button>
-            <button id="r" class="button" onclick="animationManager('reset', 'proton8')">Reset Animation</button>
+        <div id="largeButtonContainer">
+            <button id="s" class="button" onclick="animationManager('start', 'proton4', 128, 'energy4')">Start</button>
+            <button id="s" class="button" onclick="animationManager('stop', 'proton4', 128, 'energy4')">Stop</button>
+            <button id="r" class="button" onclick="animationManager('reset', 'proton4', 128, 'energy4')">Reset</button>
+        </div>
+        <br />
+        <br />
+        <p>
+            Electron tunneling appears in many areas of science and has led to some incredibly important advancements in
+            <a href="https://spectrum.ieee.org/computing/hardware/quantum-transistors-toward-nanoelectronics">quantum computing</a>,
+            <a href="https://www.sciencealert.com/here-s-the-science-behind-why-it-ll-take-us-decades-to-master-nuclear-fusion">astrophysics</a>, and
+            <a href="https://www.the-scientist.com/?articles.view/articleNo/12448/title/Taking-A-Microscopic-View-Of-Biochemistry-And-DNA-Sequencing/">molecular biology</a>.
+            By futhering our understanding of quantum theory we discover more and more about the rules that define our world at a nanoscopic level.
+        </p>
+        <p>
+            Try playing around with various configurations and see what you can discover.
+        </p>
+        <br />
+        <div id="animationContainer">
+            <div class="wall"><p class="potentialbarriertext">V = &#8734;</p></div>
+            <div class="leftside" id="leftside2"><p class="potentialbarriertext">V = 0</p></div>
+            <div class="wall" id="rightwall3"><p class="potentialbarriertext">V > E</p></div>
+            <div class="rightside" id="rightside3"><p class="potentialbarriertext">V = 0</p></div>
+            <div class="line" id="line8"></div>
+            <div class="proton" id="proton5"></div>
+            <div class="slidecontainer" style="margin-top:0px;padding-top:0px;">
+                <p class="slidertext">Kinetic Energy</p>
+                <input type="range" min="1" max="180" value="90" class="energy" id="energy5">
+                <br />
+                <br />
+                <p class="slidertext">Tunneling</p>
+                <label class="switch">
+                    <input id="tunneling3" type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+                <p class="slidertext">Potential Energy Barrier</p>
+                <input type="range" min="100" max="300" value="100" class="potential" id="barrier2" onchange="changeBarrier('barrier2', 'rightwall3', 'rightside3')">
+                <br />
+                <p class="slidertext">Particle</p>
+                <div style="display:inline-block">
+                    <input type="button" id="protonButton" style="width:50px;height:50px;background:url(/img/proton.png);background-size:30px;background-repeat: no-repeat;background-position:center;" onclick="switchParticle('img/proton.png')" />
+                    <input type="button" id="electronButton" style="width:50px;height:50px;background:url(/img/electron.png);background-size:30px;background-repeat:no-repeat;background-position:center;" onclick="switchParticle('img/electron.png')" />
+                </div>
+                <hgroup class="speech-bubble" style="margin-top:40px;margin-left:30px;">
+                    <h1 style="font-size:small;color:white;font-family:Arial;padding:5px;font-weight:400;">Choose your particle!</h1>
+                </hgroup>
+
+            </div>
+        </div>
+        <div id="largeButtonContainer">
+            <button id="s" class="button" onclick="animationManager('start', 'proton5', 128, 'energy5')">Start</button>
+            <button id="s" class="button" onclick="animationManager('stop', 'proton5', 128, 'energy5')">Stop</button>
+            <button id="r" class="button" onclick="animationManager('reset', 'proton5', 128, 'energy5')">Reset</button>
         </div>
         <br /><br /><br /><br /><br />
     </div>
