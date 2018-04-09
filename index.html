@@ -16,12 +16,21 @@
         <div id="titlecontainer">
             <img src="/img/electron.png" class="electron" id="electron1" />
             <h1 id="title">Tunneling Particles</h1>
+            <p style="padding-bottom:10px;margin:0;">by Charlotte Cullip</p>
+            <div class="disclaimer">
+                <p id="disclaimer" style="padding:0px;">Disclaimer</p>
+                <span class="disclaimerText">This interactive document assumes some prior knowledge of chemistry and quantum physics.</span>
+            </div>
         </div>
+        <p style="text-align:center;">
+            <i>Particles moving through walls? Is it magic? Is it sorcery? Wellll.... not quite. But electrons can tunnel, and they do it quite often, too.</i>
+        </p>
         <p>
-            Tunneling is an aspect of quantum mechanics that attempts to explain how particles can travel through potential energy barriers. Classical
-            physics tells us that if a particle, such as a proton or electron, were contained in a "box" with walls of potential energy higher than
-            the particle's kinetic energy, the particle would not be able to leave the box. In a 1-dimensional box with V = 0 inside the box and
-            V = &#8734; at each wall, the classical movement appears to be true.
+            In classical physics, particles can be contained within a potential energy well—or a “box” that has zero potential 
+            energy inside and infinite potential energy at the edges. The particle oscillates within the box in a wave-like manner. This can be described with 
+            the wave-particle duality theory, which posits that particles, such as electrons, exhibit both particle- and wave-like behavior. Scientists 
+            have observed experimentally that electrons do obey these classical laws in some scenarios. For example, in a 1-dimensional box with V = 0 inside the box 
+            and V = &#8734; at each wall, classical physics is sufficient to explain the particle’s motion.
         </p>
         <br />
         <div id="animationContainer2">
@@ -47,18 +56,21 @@
         <br />
         <br />
         <p>
-            But what if the potential energy is still higher that the kinetic energy but not infinity? Well...
-            This leads to tunneling! Quantum theory states that particles are able to tunnel through the walls if V>E,
-            with the kinetic energy decaying as it tunnels. Tunneling is not guaranteed, however. When a particle reaches
-            a boundary with E < V < &#8734;, it can either continue through the wall or be reflected and change direction.
-            This can be described by the tunneling probability: `P = e^((-4api)/hsqrt(2m(V-E)`.
+            However, upon lowering the potential energy past a certain threshold, scientists observed particles traveling into the
+            barrier, i.e. the classically forbidden region. To explain this phenomenon, physicists turned to quantum theory, which
+            states that particles are allowed to tunnel through the barrier if V > E but less than infinity. When a particle reaches this barrier with
+            E < V < &#8734;, it can either continue through the wall or be reflected and continue in the opposite direction. The 
+            probability of the particle being transmitted through the barrier is described by the following equation:
+            `P = e^((-4api)/hsqrt(2m(V-E)`.
         </p>
         <p>
-            The probability of tunneling will increase as mass, <i>m</i>, decreases, potential energy, <i>V</i>, decreases, and the
-            barrier width, <i>a</i>, decreases. In reality, the particle, which also has wave-like qualities, will mostly be reflected,
-            although a certain portion will continue through the barrier, depending on the probability from the above equation.
-            For the following example, we will simplify the equation to either be P = 1 (100% chance of tunneling) or P = 0 (0% chance of tunneling)
-            in order to show the motion of the particle in each situation.
+            The probability of tunneling is dependent on the particle’s mass, <i>m</i>, the particle’s energy, <i>E</i>, the potential
+            energy, <i>V</i>, and the barrier width, <i>a</i>. Less mass, higher kinetic energy, lower potential energy, and a thinner
+            barrier would all increase the probability of transmission. As the potential energy and the barrier width increase toward
+            infinity, the probability reduces to P = 0, which follows the classical assumption. Additionally, as the kinetic energy approaches
+            the potential energy, P &#8594; 1, and when E >> V, the probability of tunneling is 1. For the following examples,
+            we will simplify the equation to be either P = 1 (100% chance of tunneling) or P = 0 (0% chance of tunneling) in order
+            to show the motion of the particle in each situation.
         </p>
         <br />
         <br />
@@ -93,8 +105,11 @@
         <br />
         <br />
         <p>
-            If the potential energy barrier isn't infinitely wide, then the proton can tunnel through the barrier and resume oscillation on the other side.
-            The width of the barrier will affect how much kinetic energy the particle has afterwards.
+            Upon entering the barrier, the particle will exponentially lose energy as it moves to the right. If the potential energy 
+            barrier is not infinitely wide, the particle can tunnel through the barrier and resume oscillation on the other side. The 
+            amplitude of the wave on the right side of the barrier will therefore depend on the width of the barrier and the initial 
+            kinetic energy of the particle. By increasing the particle’s energy and decreasing the barrier width, the majority of the 
+            original energy can be maintained.
         </p>
         <br />
         <br />
@@ -131,14 +146,16 @@
         <br />
         <br />
         <p>
-            Electron tunneling appears in many areas of science and has led to some incredibly important advancements in
+            Particle tunneling, especially electron tunneling, appears in many areas of science and has led to some incredibly important advancements in
             <a href="https://spectrum.ieee.org/computing/hardware/quantum-transistors-toward-nanoelectronics">quantum computing</a>,
             <a href="https://www.sciencealert.com/here-s-the-science-behind-why-it-ll-take-us-decades-to-master-nuclear-fusion">astrophysics</a>, and
             <a href="https://www.the-scientist.com/?articles.view/articleNo/12448/title/Taking-A-Microscopic-View-Of-Biochemistry-And-DNA-Sequencing/">molecular biology</a>.
-            By futhering our understanding of quantum theory we discover more and more about the rules that define our world at a nanoscopic level.
+            For example, particle tunneling has led to the understanding of electron transfer within proteins—which is vital for cellular function in humans.
+            To travel from one part of a protein to another, the electron will tunnel through pseudo barriers, similar to the theoretical particle in a box. By
+            furthering our understanding of quantum theory we will discover more and more about the rules that define our world at a nanoscopic level.
         </p>
         <p>
-            Try playing around with various configurations and see what you can discover.
+            Try playing around with various animation configurations and see what you can discover!
         </p>
         <br />
         <div id="animationContainer">
@@ -179,7 +196,5 @@
         </div>
         <br /><br /><br /><br /><br />
     </div>
-
-
 </body>
 </html>

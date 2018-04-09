@@ -50,6 +50,7 @@
 body {
     background-image: url("img/background3.jpg");
     background-repeat: repeat-y;
+    width: 1440px;
 }
 
 #container {
@@ -67,7 +68,6 @@ body {
     position: relative;
     border: 3px solid black;
     display: inline-block;
-    border-radius: 5px;
     box-shadow: 20px 20px 50px grey;
 }
 
@@ -181,6 +181,10 @@ p {
     padding-right: 70px;
     font-size: larger;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#titlecontainer {
+    text-align:center;
 }
 
 #title {
@@ -337,4 +341,38 @@ input:checked + .slider:before {
     margin-left: -16px;
     margin-top: -16px;
     box-shadow: 20px 20px 50px grey;
+}
+
+.disclaimer {
+    position: relative;
+    display: inline-block;
+    align-content:center;
+    text-align: center;
+    padding: 0px;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+#disclaimer {
+    text-align: center;
+    margin: 0;
+}
+
+/* Disclaimer text */
+.disclaimer .disclaimerText {
+    visibility: hidden;
+    width: 400px;
+    background-color: #8080ff;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    /* Position the disclaimer text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the disclaimer text when you mouse over the disclaimer container */
+.disclaimer:hover .disclaimerText {
+    visibility: visible;
+}
 }
