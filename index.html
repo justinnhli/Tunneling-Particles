@@ -59,7 +59,7 @@
             However, upon lowering the potential energy past a certain threshold, scientists observed particles traveling into the
             barrier, i.e. the classically forbidden region. To explain this phenomenon, physicists turned to quantum theory, which
             states that particles are allowed to tunnel through the barrier if the potential energy, V, is less than infinity but greater than the kinetic energy, E.
-            When a particle reaches this barrier with
+            When a particle reaches this barrier with 
             E < V < &#8734;, it can either continue through the wall or be reflected and continue in the opposite direction. The
             probability of the particle being transmitted through the barrier is described by the following equation:
             `P = e^((-4Lpi)/hsqrt(2m(V-E)`.
@@ -153,7 +153,7 @@
         </p>
         <div style="background-color: lightgrey;margin:30px;border:2px solid grey">
             <p style="font-weight: bold;">
-                Example 1:
+                Example:
             </p>
             <p>
                 <br />
@@ -176,16 +176,19 @@
             </p>
             </div>
         <p>
-            From the above example, we can see that the electron has a 0.663% chance of tunneling. Although it seems very small, this is on the typical order of magnitude for
-            tunneling probabilities. The following exercises will build on this example, so try working through them to test your knowledge. 
+            From the above example, we can see that the electron has a 0.663% chance of tunneling. Although this value seems very small, typical tunneling probabilities
+            can range from zero (potential energy is infinite) all the way to 100% (potential energy is equal to kinetic energy).
+            The following exercises will build on this example, so try working through them to test your knowledge. 
         </p>
         <div style="background-color:lightblue;margin:30px; border: 2px solid black">
 
             <p style="font-weight:bold;">
                 Exercises
+                <br />
             </p>
+            <p><i>Click on your desired answer for instant feedback.</i></p>
             <p>
-                1) The values for the electron's kinetic energy and the barrier width from Example 1 remain constant, but the potential energy changes to 1.70 eV.
+                1) The values for the electron's kinetic energy and the barrier width from the Example remain constant, but the potential energy changes to 1.70 eV.
                 <br />
 
             </p>
@@ -193,38 +196,38 @@
                 a) Conceptually, what happens to the tunneling probability?
             </p>
             <div style="padding-left:140px;">
-                <p style="cursor:pointer" onclick="click1('incorrect1', 'correct1')">(a) It doesn't change</p>
-                <p style="cursor:pointer" onclick="click1('correct1', 'incorrect1')">(b) It increases</p>
-                <p style="cursor:pointer" onclick="click1('incorrect1', 'correct1')">(c) It decreases</p>
+                <p id="ans1a" style="cursor:pointer" onclick="click1('incorrect1', 'correct1');color(this, 'red')">(a) It doesn't change</p>
+                <p id="ans1b" style="cursor:pointer" onclick="click1('correct1', 'incorrect1');color(this, 'green')">(b) It increases</p>
+                <p id="ans1c" style="cursor:pointer" onclick="click1('incorrect1', 'correct1');color(this, 'red')">(c) It decreases</p>
             </div>
             <p style="padding-left:100px;">
                 b) What is the tunneling probability?
             </p>
             <div style="padding-left:140px;">
-                <p style="cursor:pointer" onclick="click1('incorrect2', 'correct2')">(a) 45.9%</p>
-                <p style="cursor:pointer" onclick="click1('correct2', 'incorrect2')">(b) 16.0%</p>
-                <p style="cursor:pointer" onclick="click1('incorrect2', 'correct2')">(c) 0.66%</p>
-                <p style="cursor:pointer" onclick="click1('incorrect2', 'correct2')">(c) 66.4%</p>
+                <p id="ans2a"style="cursor:pointer" onclick="click1('incorrect2', 'correct2');color(this, 'red')">(a) 45.9%</p>
+                <p id="ans2b" style="cursor:pointer" onclick="click1('correct2', 'incorrect2');color(this, 'green')">(b) 16.0%</p>
+                <p id="ans2c" style="cursor:pointer" onclick="click1('incorrect2', 'correct2');color(this, 'red')">(c) 0.66%</p>
+                <p id="ans2d" style="cursor:pointer" onclick="click1('incorrect2', 'correct2');color(this, 'red')">(c) 66.4%</p>
             </div>
             <p>
                 2) True or False: If we use a proton instead of an electron, the tunneling probability will not be affected.
             </p>
             <div style="padding-left:140px;">
-                <p style="cursor:pointer" onclick="click1('incorrect3', 'correct3')">True</p>
-                <p style="cursor:pointer" onclick="click1('correct3', 'incorrect3')">False</p>
+                <p id="ans3a" style="cursor:pointer" onclick="click1('incorrect3', 'correct3');color(this, 'red')">True</p>
+                <p id="ans3b" style="cursor:pointer" onclick="click1('correct3', 'incorrect3');color(this, 'green')">False</p>
             </div>
             <p>
                 3) Given a 1D box with L = 200 pm and an electron with E = 1.50 eV, what is the potential energy necessary to give a tunneling probability of 50%?
             </p>
             <div style="padding-left:140px;">
-                <p style="cursor:pointer" onclick="click1('incorrect4', 'correct4')">(a) 1.709 eV</p>
-                <p style="cursor:pointer" onclick="click1('incorrect4', 'correct4')">(b) 16.37 eV</p>
-                <p style="cursor:pointer" onclick="click1('incorrect4', 'correct4')">(c) 2.103 eV</p>
-                <p style="cursor:pointer" onclick="click1('correct4', 'incorrect4')">(c) 1.615 eV</p>
+                <p id="ans4a" style="cursor:pointer" onclick="click1('incorrect4', 'correct4');color(this, 'red')">(a) 1.709 eV</p>
+                <p id="ans4b" style="cursor:pointer" onclick="click1('incorrect4', 'correct4');color(this, 'red')">(b) 16.37 eV</p>
+                <p id="ans4c" style="cursor:pointer" onclick="click1('incorrect4', 'correct4');color(this, 'red')">(c) 2.103 eV</p>
+                <p id="ans4d" style="cursor:pointer" onclick="click1('correct4', 'incorrect4');color(this, 'green')">(c) 1.615 eV</p>
             </div>
             
 
-            <div style="width:500px;height:100px;float:left;position:absolute;top:3315px;left:700px;z-index:3">
+            <div style="width:500px;height:100px;float:left;position:absolute;top:3365px;left:700px;z-index:3">
                 <p id="correct1" style="padding:0px;color:green;position:absolute;z-index:1;visibility:hidden;">
                     Correct! As the potential energy decreases and approaches the kinetic energy, the particle has a higher chance of penetrating the barrier.
                 </p>
@@ -233,15 +236,15 @@
                 </p>
             </div>
 
-            <div style="width:500px;height:100px;float:left;position:absolute;top:3500px;left:700px;z-index:3">
+            <div style="width:500px;height:100px;float:left;position:absolute;top:3550px;left:700px;z-index:3">
                 <p id="correct2" style="padding:0px;color:green;position:absolute;z-index:1;visibility:hidden;">
                     Correct! We can see that as the potential energy approaches the kinetic energy, the probability increases.
                 </p>
                 <p id="incorrect2" style="padding:0px;color:red;position:absolute;z-index:2;visibility:hidden;">
-                    Try again! Plug in the same values as in Example 1, but substituting V = 1.70 eV for 3.00 eV.
+                    Try again! Plug in the same values as in the Example problem, but substituting V = 1.70 eV for 3.00 eV.
                 </p>
             </div>
-            <div style="width:500px;height:100px;float:left;position:absolute;top:3680px;left:700px;z-index:3">
+            <div style="width:500px;height:100px;float:left;position:absolute;top:3720px;left:700px;z-index:3">
                 <p id="correct3" style="padding:0px;color:green;position:absolute;z-index:1;visibility:hidden;">
                     Correct! Increasing the mass will decrease the tunneling probability, since more massive particles will need more energy to tunnel through the barrier.
                 </p>
@@ -249,7 +252,7 @@
                     Try again! Think about how increasing the mass will affect the tunneling probability.
                 </p>
             </div>
-            <div style="width:500px;height:100px;float:left;position:absolute;top:3850px;left:700px;z-index:3">
+            <div style="width:500px;height:100px;float:left;position:absolute;top:3900px;left:700px;z-index:3">
                 <p id="correct4" style="padding:0px;color:green;position:absolute;z-index:1;visibility:hidden;">
                     Correct! If you just used guess-and-check, try to also see how the equation can be rearranged to find V.
                 </p>
@@ -272,8 +275,9 @@
             <br />
             <br />
             Although these interactions only skim the surface of quantum chemistry, the concepts of the particle's motion are fundamental.
-            After the interactions, example problems, and exercises, I hope you can come away with a deeper understanding of how various factors such as kinetic energy, barrier width,
-            and potential energy affect the tunneling probability of a particle. These ideas form the basis for further study into the intriguing world of quantum chemistry. 
+            After the interactions, example problems, and exercises, I hope have a deeper understanding of how various factors such as kinetic energy, barrier width,
+            and potential energy affect the tunneling probability of a particle. These ideas form a basis for further study and will be frequently referenced as you delve
+            deeper into the intriguing field of quantum chemistry. 
         </p>
         <br />
         <!--<div id="animationContainer">

@@ -192,3 +192,7 @@ function click1(show, hide) {
     document.getElementById(show).style.visibility = 'visible';
     document.getElementById(hide).style.visibility = 'hidden';
 }
+
+function color(elem, color) {
+    elem.style.color = color;
+}
