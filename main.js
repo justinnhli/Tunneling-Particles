@@ -187,3 +187,8 @@ function switchParticle(url) {
     particle.style.backgroundPosition = "center";
     particle.style.backgroundSize = 30 + 'px';
 }
+
+function click1(show, hide) {
+    document.getElementById(show).style.visibility = 'visible';
+    document.getElementById(hide).style.visibility = 'hidden';
+}
